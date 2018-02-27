@@ -27,6 +27,15 @@ cID3Field::cID3Field(uint16_t dwID, const QString& szShortName, const QString& s
 	setName(szName);
 }
 
+cID3Field::~cID3Field()
+{
+	if(m_Value.canConvert<cPictureList*>())
+	{
+		cPictureList*	lpPictureList	= m_Value.value<cPictureList*>();
+		delete lpPictureList;
+	}
+}
+
 uint16_t cID3Field::getID()
 {
 	return(m_dwID);

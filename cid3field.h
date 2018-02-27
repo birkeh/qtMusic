@@ -36,6 +36,7 @@ public:
 	explicit	cID3Field(uint16_t dwID, QObject *parent = 0);
 	explicit	cID3Field(uint16_t dwID, const QString& szShortName, QObject *parent = 0);
 	explicit	cID3Field(uint16_t dwID, const QString& szShortName, const QString& szName, QObject *parent = 0);
+	~cID3Field();
 
 	uint16_t	getID();
 

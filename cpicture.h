@@ -1,16 +1,14 @@
 #ifndef cPicture_H
 #define cPicture_H
 
-#include <QObject>
 #include <QString>
 #include <QVariant>
 #include <QPixmap>
 #include <stdint.h>
 
 
-class cPicture : public QObject
+class cPicture
 {
-Q_OBJECT
 public:
 	enum TYPE
 	{
@@ -37,7 +35,8 @@ public:
 		TYPE_PUBLISHER_LOGOTYPE,
 	};
 
-	explicit		cPicture(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription, QObject *parent = 0);
+	explicit		cPicture();
+	explicit		cPicture(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription);
 
 	void			setPixmap(const QPixmap& Pixmap);
 	QPixmap			getPixmap();
@@ -63,16 +62,16 @@ public slots:
 
 };
 
-Q_DECLARE_METATYPE(cPicture*);
+Q_DECLARE_METATYPE(cPicture)
 
 
-class cPictureList : public QList<cPicture *>
+class cPictureList : public QList<cPicture>
 {
 public:
 	cPictureList();
-	cPicture*	add(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription, QObject *parent = 0);
+	cPicture	add(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription);
 };
 
-Q_DECLARE_METATYPE(cPictureList*);
+Q_DECLARE_METATYPE(cPictureList*)
 
 #endif // cPicture_H

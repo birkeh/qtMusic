@@ -17,6 +17,9 @@ public:
 
 private:
 	Ui::cMainWindow *ui;
+
+	void				addFile(const QString& szFile);
+	void				addPath(const QString& szPath);
 };
 
 #endif // CMAINWINDOW_H

@@ -1,8 +1,12 @@
 #include "cPicture.h"
 
 
-cPicture::cPicture(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription, QObject *parent) :
-		QObject(parent), m_Pixmap(Pixmap), m_dwType(dwType), m_szDescription(szDescription)
+cPicture::cPicture()
+{
+}
+
+cPicture::cPicture(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription) :
+		m_Pixmap(Pixmap), m_dwType(dwType), m_szDescription(szDescription)
 {
 }
 
@@ -146,8 +150,9 @@ cPictureList::cPictureList()
 {
 }
 
-cPicture* cPictureList::add(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription, QObject *parent)
+cPicture cPictureList::add(const QPixmap& Pixmap, uint16_t dwType, const QString& szDescription)
 {
-	this->append(new cPicture(Pixmap, dwType, szDescription, parent));
-	return(this->last());
+	cPicture	picture(Pixmap, dwType, szDescription);
+	this->append(picture);
+	return(picture);
 }
