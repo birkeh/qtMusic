@@ -6,7 +6,7 @@
 #include <QPixmap>
 #include <stdint.h>
 
-#include "cPicture.h"
+#include "cpicture.h"
 
 
 class cID3Field : public QObject

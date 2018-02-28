@@ -7,7 +7,7 @@
 #include <QDateTime>
 #include <stdint.h>
 #include "libid3tag/id3tag.h"
-#include "cID3Field.h"
+#include "cid3field.h"
 
 
 #define WITH_PICTURE

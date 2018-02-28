@@ -3,7 +3,7 @@
 #include <string>
 #include <stdio.h>
 
-#include "cMediaInfo.h"
+#include "cmediainfo.h"
 #include "fields.h"
 
 

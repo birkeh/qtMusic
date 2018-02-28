@@ -1,4 +1,4 @@
-#include "cPicture.h"
+#include "cpicture.h"
 
 
 cPicture::cPicture()

@@ -2,7 +2,7 @@
 #define FIELDS_H
 
 
-#include "cID3Field.h"
+#include "cid3field.h"
 
 
 typedef struct tagFIELDS

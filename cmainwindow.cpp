@@ -62,7 +62,8 @@ cMainWindow::cMainWindow(QWidget *parent) :
 	QTime	time;
 	time.start();
 //	addPath("C:/Users/birkeh/Music");
-	addPath("C:/Users/vet0572/Music");
+//	addPath("C:/Users/vet0572/Music");
+	addPath("/data/Music");
 	qDebug() << time.elapsed();
 //	addPath("C:/Users/birkeh/Music");
 //	addFile("C:/Users/vet0572/Music/Amy MacDonald/Under Stars (Deluxe)/01 - Dream On.mp3");

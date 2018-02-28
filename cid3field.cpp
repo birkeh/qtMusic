@@ -1,4 +1,4 @@
-#include "cID3Field.h"
+#include "cid3field.h"
 
 
 cID3Field::cID3Field(uint16_t dwID, const QString& szShortName, const QString& szName) :

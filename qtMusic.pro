@@ -45,7 +45,7 @@ SOURCES += \
     libid3tag/util.c \
     libid3tag/version.c \
     cid3field.cpp \
-    cpicture.cpp \
+    cPicture.cpp \
     libmpg123/common.c \
     libmpg123/dxhead.c \
     libmpg123/getbits.c \
