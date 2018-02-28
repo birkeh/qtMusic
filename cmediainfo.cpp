@@ -14,6 +14,7 @@ extern "C" {
 #include "libmpg123/mpg123.h"
 }
 
+
 cMediaInfo::cMediaInfo(QObject *parent) :
 	QObject(parent),
 	m_szFileName(""),
@@ -26,6 +27,12 @@ cMediaInfo::cMediaInfo(QObject *parent) :
 	m_dwSeconds(0)
 {
 	initFields();
+}
+
+cMediaInfo::~cMediaInfo()
+{
+	for(int x = 0;x < m_ID3FieldList.count();x++)
+		delete (m_ID3FieldList.at(x));
 }
 
 void cMediaInfo::clear()

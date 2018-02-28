@@ -1,30 +1,12 @@
 #include "cID3Field.h"
 
 
-cID3Field::cID3Field(QObject *parent) :
-	QObject(parent), m_dwID(0), m_szShortName(""), m_szName(""), m_bValid(false)
+cID3Field::cID3Field(uint16_t dwID, const QString& szShortName, const QString& szName) :
+	m_dwID(dwID),
+	m_szShortName(szShortName),
+	m_szName(szName),
+	m_bValid(false)
 {
-}
-
-cID3Field::cID3Field(uint16_t dwID, QObject *parent) :
-	QObject(parent)
-{
-	m_dwID	= dwID;
-}
-
-cID3Field::cID3Field(uint16_t dwID, const QString& szShortName, QObject *parent) :
-	QObject(parent)
-{
-	m_dwID	= dwID;
-	setShortName(szShortName);
-}
-
-cID3Field::cID3Field(uint16_t dwID, const QString& szShortName, const QString& szName, QObject *parent) :
-	QObject(parent)
-{
-	m_dwID	= dwID;
-	setShortName(szShortName);
-	setName(szName);
 }
 
 cID3Field::~cID3Field()
@@ -117,7 +99,7 @@ cID3Field* cID3FieldList::add(uint16_t dwID, const QString& szShortName, const Q
 	if(lpID3Field)
 		return(lpID3Field);
 
-	lpID3Field	= new cID3Field(dwID, szShortName, szName, parent);
+	lpID3Field	= new cID3Field(dwID, szShortName, szName);
 	this->append(lpID3Field);
 	return(lpID3Field);
 }

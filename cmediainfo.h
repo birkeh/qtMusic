@@ -18,6 +18,7 @@ class cMediaInfo : public QObject
 Q_OBJECT
 public:
 	explicit		cMediaInfo(QObject *parent = 0);
+	~cMediaInfo();
 
 	void			clear();
 

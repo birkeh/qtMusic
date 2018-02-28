@@ -1,7 +1,6 @@
 #ifndef cID3Field_H
 #define cID3Field_H
 
-#include <QObject>
 #include <QString>
 #include <QVariant>
 #include <QPixmap>
@@ -12,7 +11,6 @@
 
 class cID3Field : public QObject
 {
-Q_OBJECT
 public:
 	enum TAG
 	{
@@ -32,40 +30,34 @@ public:
 		TAG_OfficialAudioSourceWebpage,	TAG_OfficialInternetRadioStationWebpage,	TAG_Payment,					TAG_PublishersOfficialWebpage,			TAG_UserDefinedURLLinkFrame,	TAG_MAXFIELDS,
 	};
 
-	explicit	cID3Field(QObject *parent = 0);
-	explicit	cID3Field(uint16_t dwID, QObject *parent = 0);
-	explicit	cID3Field(uint16_t dwID, const QString& szShortName, QObject *parent = 0);
-	explicit	cID3Field(uint16_t dwID, const QString& szShortName, const QString& szName, QObject *parent = 0);
+	explicit		cID3Field(uint16_t dwID = 0, const QString& szShortName = "", const QString& szName = "");
 	~cID3Field();
 
-	uint16_t	getID();
+	uint16_t		getID();
 
-	void		setShortName(const QString& szShortName);
-	QString		getShortName();
+	void			setShortName(const QString& szShortName);
+	QString			getShortName();
 
-	void		setName(const QString& szName);
-	QString		getName();
+	void			setName(const QString& szName);
+	QString			getName();
 
-	void		setValue(const QVariant& Value);
-	QVariant	getValue();
+	void			setValue(const QVariant& Value);
+	QVariant		getValue();
 
-	bool		isValid();
+	bool			isValid();
 
-	cID3Field&	operator=(const cID3Field& rhs);
-	inline bool	operator== (const cID3Field& other) const
+	cID3Field&		operator=(const cID3Field& rhs);
+	inline bool		operator== (const cID3Field& other) const
 	{
 		return(m_dwID == other.m_dwID);
 	}
-protected:
-	uint16_t	m_dwID;
-	QString		m_szShortName;
-	QString		m_szName;
-	QVariant	m_Value;
-	bool		m_bValid;
-signals:
 
-public slots:
-
+private:
+	uint16_t		m_dwID;
+	QString			m_szShortName;
+	QString			m_szName;
+	QVariant		m_Value;
+	bool			m_bValid;
 };
 
 Q_DECLARE_METATYPE(cID3Field*)

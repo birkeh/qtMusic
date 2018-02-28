@@ -89,3 +89,6 @@ LIBS += -lz
 
 FORMS += \
         cmainwindow.ui
+
+DISTFILES += \
+    libid3tag/genre.dat
